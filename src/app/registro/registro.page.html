@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Vehicular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="formVehiculo" (ngSubmit)="registrar()">
+
+    <!-- Marca -->
+    <ion-item>
+      <ion-label position="floating">Marca</ion-label>
+      <ion-input formControlName="marca"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="marca?.invalid && marca?.touched">
+      La marca es obligatoria.
+    </ion-note>
+
+    <!-- Año -->
+    <ion-item>
+      <ion-label position="floating">Año</ion-label>
+      <ion-input type="number" formControlName="anio"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="anio?.invalid && anio?.touched">
+      Debe tener exactamente 4 dígitos.
+    </ion-note>
+
+    <!-- Placa -->
+    <ion-item>
+      <ion-label position="floating">Placa</ion-label>
+      <ion-input formControlName="placa"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="placa?.invalid && placa?.touched">
+      Formato incorrecto. Ejemplo: ABC1234
+    </ion-note>
+
+    <ion-button expand="block" type="submit" [disabled]="formVehiculo.invalid">
+      Registrar
+    </ion-button>
+
+  </form>
+
+</ion-content>

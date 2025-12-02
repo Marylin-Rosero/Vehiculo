@@ -8,27 +8,27 @@
 
   <form [formGroup]="formVehiculo" (ngSubmit)="registrar()">
 
-    <!-- Marca -->
+
     <ion-item>
-      <ion-label position="floating">Marca</ion-label>
+      <ion-label position="floating">Marca Del Vehiculo</ion-label>
       <ion-input formControlName="marca"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="marca?.invalid && marca?.touched">
-      La marca es obligatoria.
+      La marca del vehiculo es obligatoria.
     </ion-note>
 
-    <!-- Año -->
+
     <ion-item>
-      <ion-label position="floating">Año</ion-label>
+      <ion-label position="floating">Año Del Vehiculo</ion-label>
       <ion-input type="number" formControlName="anio"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="anio?.invalid && anio?.touched">
       Debe tener exactamente 4 dígitos.
     </ion-note>
 
-    <!-- Placa -->
+
     <ion-item>
-      <ion-label position="floating">Placa</ion-label>
+      <ion-label position="floating">Placa Del Vehiculo</ion-label>
       <ion-input formControlName="placa"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="placa?.invalid && placa?.touched">
@@ -36,7 +36,7 @@
     </ion-note>
 
     <ion-button expand="block" type="submit" [disabled]="formVehiculo.invalid">
-      Registrar
+      Registrar Vehículo
     </ion-button>
 
   </form>
